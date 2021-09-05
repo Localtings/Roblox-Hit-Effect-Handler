@@ -1,7 +1,9 @@
 --[[
 	@localtbowm on Roblox -
 	
-	Localt's Hit effect module.
+	Sento Effect Module.
+
+	Contribution: @Olv321123
 
 	USAGE:
 	==================================================
@@ -14,18 +16,18 @@
 	===================================================
 ]]
 
---< Metatable >--
+--Metatable--
 local effect = {}
 effect.__index = effect
 
 
---< Initialize >--
+--Initialize--
 effect.NEW_TWEEN = function()
 	local effect = setmetatable({},effect)
 	return effect
 end
 
---< Child >--
+--Child--
 function effect:GenerateParticles(t, o)
 	local hiteffect = o
 	hiteffect.Parent = t
