@@ -1,19 +1,8 @@
 --[[
-	@localtbowm on Roblox -
-	
-	Sento Effect Module.
-
-	Contribution: @Olv321123
-
 	USAGE:
-	==================================================
-	effect.NEW_TWEEN()
-	Description: Starts the module.
-	effect:GenerateParticles(Target, Object)
-	Description: Play Effect (Particles)
-	effect:GenerateMeshEffect(Target, Object, Duration)	
-	Description: Play Effect (Meshes)
-	===================================================
+	module.NEW_TWEEN() - Starts the module.
+	module:GenerateParticles(Target, Object) - Play Effect (Particles)
+	module:GenerateMeshEffect(Target, Object, Duration) - Play Effect (Meshes)
 ]]
 
 --Metatable--
