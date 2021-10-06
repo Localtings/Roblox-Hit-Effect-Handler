@@ -2,7 +2,7 @@
 	USAGE:
 	module.NEW_TWEEN() - Starts the module.
 	module:GenerateParticles(Target, Object) - Play Effect (Particles)
-	module:GenerateMeshEffect(Target, Object, Duration) - Play Effect (Meshes)
+	module:GenerateMeshEffect(Target, Object, Duration, Desired Size) - Play Effect (Meshes)
 ]]
 
 --Metatable--
