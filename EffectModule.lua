@@ -24,16 +24,16 @@ function effect:GenerateParticles(t, o)
 	game.Debris:AddItem(hiteffect,1)
 end
 
-function effect:GenerateMeshEffect(t, o, ti)
+function effect:GenerateMeshEffect(t, o, ti, size)
 	local tweenservice = game:GetService("TweenService")
-	local HiteffectBall = function(Target, Object, T_ime)
+	local HiteffectBall = function(Target, Object, T_ime, Size)
 		local ClonedBall = Object
 		ClonedBall.Parent = Target
 		ClonedBall.CFrame = Target.CFrame * CFrame.new(math.random(-1,1),math.random(-1,1),math.random(-1,1))
 		ClonedBall.CFrame = CFrame.new(ClonedBall.Position, Target.Position)
 		game.Debris:AddItem(ClonedBall,1)
-		tweenservice:Create(ClonedBall,TweenInfo.new(T_ime,Enum.EasingStyle.Quad,Enum.EasingDirection.InOut),{CFrame = ClonedBall.CFrame + ClonedBall.CFrame.lookVector * -7,Transparency = 1,Size = Vector3.new(0.087, 0.08, 3.35)}):Play()
+		tweenservice:Create(ClonedBall,TweenInfo.new(T_ime,Enum.EasingStyle.Quad,Enum.EasingDirection.InOut),{CFrame = ClonedBall.CFrame + ClonedBall.CFrame.lookVector * -7,Transparency = 1,Size = size:Play()
 	end	
-	HiteffectBall(t, o, ti)
+	HiteffectBall(t, o, ti, size)
 end
 return effect
