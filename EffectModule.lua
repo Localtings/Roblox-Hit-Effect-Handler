@@ -31,6 +31,12 @@ function effect:GenerateMeshEffect(_target, _object, _time, size, moveFoward)
 	ClonedBall.CFrame = CFrame.new(ClonedBall.Position, _target.Position)
 	game.Debris:AddItem(ClonedBall,1)
 	
+	if size then
+		size = size
+	else
+		_object.Size = size
+	end
+	
 	tweenservice:Create(
 		ClonedBall,
 		TweenInfo.new(
