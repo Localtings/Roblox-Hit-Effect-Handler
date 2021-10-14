@@ -1,5 +1,5 @@
 --[[
-	module.NEW_TWEEN() 
+	module.NewEffect() 
 	module:GenerateParticles(Target, Object)
 	module:GenerateMeshEffect(Target, Object, Duration, Desired Size, How many studs will the meshes move foward?)
 ]]
@@ -7,7 +7,7 @@
 local effect = {}
 effect.__index = effect
 
-effect.NEW_TWEEN = function()
+effect.NewEffect = function()
 	local effect = setmetatable({},effect)
 	return effect
 end
