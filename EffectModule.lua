@@ -1,25 +1,24 @@
 --[[
-	module.NewEffect() 
-	module:GenerateParticles(Target, Object)
-	module:GenerateMeshEffect(Target, Object, Duration, Desired Size, How many studs will the meshes move foward?)
+	module:GenerateParticles(Target, Object, Emit)
+	module:GenerateMeshEffect(Target, Object, Duration, How many studs will the mesh move foward?)
 ]]
 
 local effect = {}
-effect.__index = effect
 
-effect.NewEffect = function()
-	local effect = setmetatable({},effect)
-	return effect
-end
-
-function effect:GenerateParticles(t, o)
+function effect:GenerateParticles(t, o, e)
 	local hiteffect = o
+	
+	if not e then
+		e = 1
+	end
+	
 	hiteffect.Parent = t
-	hiteffect:Emit(1)
+	hiteffect:Emit(e)
 	game.Debris:AddItem(hiteffect,1)
 end
 
-function effect:GenerateMeshEffect(t, o, ti)
+function effect:GenerateMeshEffect(t, o, ti, st)
+	
 	local tweenservice = game:GetService("TweenService")
 	local HiteffectBall = function(Target, Object, T_ime)
 		local ClonedBall = Object
@@ -36,12 +35,16 @@ function effect:GenerateMeshEffect(t, o, ti)
 				Enum.EasingDirection.InOut
 			),
 			{
-				CFrame = ClonedBall.CFrame + ClonedBall.CFrame.lookVector * -7, 
+				CFrame = ClonedBall.CFrame + ClonedBall.CFrame.lookVector * -st, 
 				Transparency = 1,
 			}
 		):Play()
 		
 	end
 	HiteffectBall(t, o, ti)
+	
+	
 end
+
+
 return effect
